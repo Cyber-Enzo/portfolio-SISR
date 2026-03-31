@@ -1,84 +1,18 @@
 :root {
-    --primary-color: #a259fd;
-    --primary-hover: #8d2cf7;
-    --background-light: #faf9fe;
-    --background-card: #fff;
-    --background-btn: #f5eaff;
-    --background-btn-hover: #a259fd;
-    --text-main: #a259fd;
-    --text-dark: #23243a;
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --background-light: #ffffff;
+    --background-card: #ffffff;
+    --background-btn: #f1f5f9;
+    --background-btn-hover: #2563eb;
+    --text-main: #2563eb;
+    --text-dark: #1e293b;
     --text-light: #fff;
-    --footer-color: #888;
-    --shadow: 0 6px 32px rgba(162,89,253,0.07);
+    --footer-bg: #1e293b;
+    --footer-color: #94a3b8;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-/* Reset */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    min-height: 100vh;
-    background: var(--background-light);
-    color: var(--text-dark);
-    display: flex;
-    flex-direction: column;
-}
-
-header {
-    width: 100%;
-    background: var(--primary-color);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: 220px;
-    min-height: 140px;
-    position: relative;
-}
-
-.logo {
-    font-size: 3.4rem;
-    font-weight: bold;
-    margin-left: 5vw;
-    flex-shrink: 0;
-    color: #fff;
-    letter-spacing: 2px;
-}
-
-nav {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2.5rem;
-    margin-right: 6vw;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: underline;
-    font-weight: normal;
-    font-size: 1.15rem;
-    transition: color 0.2s, background 0.2s, border-radius 0.2s;
-    padding: 0.2rem 0.8rem;
-    border-radius: 18px;
-}
-
-nav a:hover,
-nav a.active {
-    color: var(--primary-color);
-    background: #f5eaff;
-    text-decoration: none;
-}
 
 
 main {
@@ -135,23 +69,23 @@ main {
     border-radius: 40px;
     border: 2px solid var(--primary-color);
     background: #fff;
-    color: #23243a;
+    color: var(--text-dark);
     font-size: 1.09rem;
     width: 270px;
     outline: none;
-    box-shadow: 0 2px 12px rgba(162,89,253,0.17);
+    box-shadow: 0 2px 12px rgba(59, 130, 246, 0.1);
     transition: box-shadow 0.2s, background 0.2s, border 0.2s;
-    background-image: url('data:image/svg+xml;utf8,<svg fill="%23a259fd" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99c.41.41 1.09.41 1.5 0s.41-1.09 0-1.5l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%232563eb" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99c.41.41 1.09.41 1.5 0s.41-1.09 0-1.5l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>');
     background-repeat: no-repeat;
     background-position: 1rem center;
     background-size: 1.3rem;
 }
 
 .doc-search input[type="search"]:focus {
-    box-shadow: 0 4px 24px rgba(162,89,253,0.18);
+    box-shadow: 0 4px 24px rgba(59, 130, 246, 0.15);
     background: #fff;
     border: 2px solid var(--primary-hover);
-    color: #23243a;
+    color: var(--text-dark);
 }
 
 /* Catégories */
@@ -173,14 +107,14 @@ main {
     font-weight: bold;
     cursor: pointer;
     transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 12px rgba(162,89,253,0.10);
+    box-shadow: 0 2px 12px rgba(59, 130, 246, 0.08);
     margin-bottom: 0.5rem;
 }
 .doc-cat-btn.active,
 .doc-cat-btn:hover {
     background: var(--background-btn-hover);
     color: #fff;
-    box-shadow: 0 4px 22px rgba(162,89,253,0.13);
+    box-shadow: 0 4px 22px rgba(59, 130, 246, 0.1);
 }
 
 /* Sous-catégories */
@@ -201,14 +135,14 @@ main {
     font-weight: bold;
     cursor: pointer;
     transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 12px rgba(162,89,253,0.10);
+    box-shadow: 0 2px 12px rgba(59, 130, 246, 0.08);
     margin-bottom: 0.5rem;
 }
 .doc-subcat-btn.active,
 .doc-subcat-btn:hover {
     background: var(--background-btn-hover);
     color: #fff;
-    box-shadow: 0 4px 22px rgba(162,89,253,0.13);
+    box-shadow: 0 4px 22px rgba(59, 130, 246, 0.1);
 }
 
 /* Liste des outils/codes */
@@ -229,7 +163,7 @@ main {
     text-align: left;
     cursor: pointer;
     transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 12px rgba(162,89,253,0.09);
+    box-shadow: 0 2px 12px rgba(59, 130, 246, 0.07);
     min-width: 420px;
     max-width: 600px;
     width: 100%;
@@ -240,20 +174,20 @@ main {
 .doc-list-btn:focus {
     background: var(--background-btn-hover);
     color: #fff;
-    box-shadow: 0 4px 22px rgba(162,89,253,0.11);
+    box-shadow: 0 4px 22px rgba(59, 130, 246, 0.09);
 }
 .doc-list-btn.selected,
 .doc-list-btn.active {
     background: var(--background-btn-hover);
     color: #fff;
-    box-shadow: 0 4px 22px rgba(162,89,253,0.15);
+    box-shadow: 0 4px 22px rgba(59, 130, 246, 0.13);
 }
 
 /* Détail fiche outil/code */
 .doc-detail {
     background: #fff;
     border-radius: 22px;
-    box-shadow: 0 6px 32px rgba(162,89,253,0.10);
+    box-shadow: 0 6px 32px rgba(0, 0, 0, 0.1);
     padding: 2.2rem 1.6rem 1.6rem 1.6rem;
     margin-top: 2.5rem;
     color: var(--text-dark);
@@ -276,8 +210,9 @@ main {
     text-align: center;
 }
 .doc-detail pre {
-    background: #f4f0ff;
-    color: #23243a;
+    background: #f8fafc;
+    color: var(--text-dark);
+    border: 1px solid #e2e8f0;
     border-radius: 10px;
     padding: 1rem;
     font-size: 1rem;
@@ -289,7 +224,7 @@ main {
 .doc-detail code {
     font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
     font-size: 1em;
-    color: #7b2ff2;
+    color: var(--primary-color);
     background: none;
     padding: 0;
 }
@@ -315,21 +250,7 @@ main {
     background: var(--primary-color);
 }
 
-/* Footer */
-footer {
-    width: 100%;
-    background: transparent;
-    text-align: center;
-    z-index: 200;
-    position: relative;
-    margin-top: 2rem;
-}
-footer .copyright {
-    color: var(--footer-color);
-    font-size: 1rem;
-    padding: 0.7rem 0 0.4rem 0;
-    letter-spacing: 0.5px;
-}
+
 
 /* Responsive */
 @media (max-width: 1100px) {
@@ -364,22 +285,6 @@ footer .copyright {
     }
 }
 @media (max-width: 600px) {
-    header {
-        flex-direction: column;
-        height: auto;
-        padding: 1rem 0.5rem;
-        align-items: flex-start;
-    }
-    .logo {
-        margin-bottom: 0.5rem;
-        margin-left: 2vw;
-        font-size: 2.2rem;
-    }
-    nav ul {
-        flex-direction: column;
-        margin-right: 0;
-        gap: 0.7rem;
-    }
     main {
         padding: 1rem 0 0 0;
     }
@@ -401,7 +306,7 @@ footer .copyright {
     height: auto;
     border-radius: 12px;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.13);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     margin: 1em auto;
     display: block;
     transition: transform 0.2s, box-shadow 0.2s;
@@ -441,25 +346,41 @@ footer .copyright {
     to   { opacity: 1; }
 }
 
-.bouton-google {
-    /* Propriétés de base du bouton */
-    display: inline-block;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #8506ec;
-    color: white; 
-    text-decoration: none; 
-    cursor: pointer;
-    font-family: Arial, sans-serif;
+/* Centre le logo GitHub avec les boutons */
+.doc-categories {
+  display: flex;
+  align-items: center;     /* centre verticalement tout */
+  gap: 10px;               /* espace entre tous les boutons */
+}
 
-    /* NOUVELLES PROPRIÉTÉS POUR LE CENTRAGE (Flexbox) */
-    /* 1. Rendre l'élément Flex container */
-    display: flex; 
-    
-    /* 2. Centrer le contenu horizontalement */
-    justify-content: center; 
-    
-    /* 3. Centrer le contenu verticalement (si le bouton avait une hauteur fixe) */
-    align-items: center; 
+.github-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;               /* supprime les marges */
+}
+
+.github-icon-big {
+  width: 60px;             /* même taille que les boutons */
+  height: 60px;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.github-icon-big:hover {
+  transform: scale(1.1);
+}
+
+footer {
+    width: 100%;
+    margin-top: auto;
+    text-align: center;
+    background: transparent;
+    padding: 2rem 0;
+}
+.copyright {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin: 0;
 }

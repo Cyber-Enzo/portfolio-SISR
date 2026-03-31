@@ -1,14 +1,4 @@
-:root {
-    --primary-color: #8d2cf7;
-    --header-bg: #23243a;
-    --background-dark: #181920;
-    --text-main: #f5f5f5;
-    --text-secondary: #bdbdd7;
-    --hover-color: #6b1bb4;
-    --doc-button-color: #8d2cf7;
-    --doc-button-hover: #4d39fa;
-    --footer-color: #888;
-}
+
 
 /* Reset */
 * {
@@ -26,53 +16,7 @@ body {
     flex-direction: column;
 }
 
-header {
-    height: 25vh;
-    min-height: 150px;
-    width: 100%;
-    background: var(--header-bg);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    position: relative;
-}
 
-.logo {
-    font-size: 3.4rem;
-    font-weight: bold;
-    margin-left: 5vw;
-    flex-shrink: 0;
-    color: var(--primary-color);
-    letter-spacing: 2px;
-}
-
-nav {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2.5rem;
-    margin-right: 6vw;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: underline;
-    font-weight: normal;
-    font-size: 1.15rem;
-    transition: color 0.3s;
-    padding: 0.2rem 0.4rem;
-}
-nav a.active,
-nav a:hover {
-    color: var(--primary-color);
-}
 
 main {
     flex: 1 0 auto;
@@ -111,13 +55,13 @@ main {
 }
 
 .parcours-etape {
-    background: #23243a;
+    background: var(--background-card);
     border-radius: 32px;
-    box-shadow: 0 8px 40px rgba(141,44,247,0.13);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
     padding: 0 0 2.5rem 0;
     margin-bottom: 0;
     transition: transform 0.2s, box-shadow 0.2s;
-    border: 2px solid transparent;
+    border: 2px solid var(--card-border);
     overflow: hidden;
     max-width: 800px;
     margin-left: auto;
@@ -128,7 +72,7 @@ main {
 }
 .parcours-etape:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 16px 60px rgba(141,44,247,0.18);
+    box-shadow: 0 16px 60px rgba(37, 99, 235, 0.08);
     border-color: var(--primary-color);
 }
 
@@ -141,7 +85,7 @@ main {
 }
 .parcours-img-link:focus,
 .parcours-img-link:hover {
-    box-shadow: 0 0 0 4px var(--primary-color), 0 8px 40px rgba(141,44,247,0.2);
+    box-shadow: 0 0 0 4px var(--primary-color), 0 8px 40px rgba(37, 99, 235, 0.12);
     outline: none;
 }
 .parcours-img-large {
@@ -200,7 +144,7 @@ main {
     border: none;
     cursor: pointer;
     text-align: center;
-    box-shadow: 0 2px 16px rgba(141,44,247,0.12);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
     transition: background 0.2s, transform 0.2s;
     outline: none;
     user-select: none;
@@ -267,22 +211,7 @@ footer .copyright {
     }
 }
 @media (max-width: 600px) {
-    header {
-        flex-direction: column;
-        height: auto;
-        padding: 1rem 0.5rem;
-        align-items: flex-start;
-    }
-    .logo {
-        margin-bottom: 0.5rem;
-        margin-left: 2vw;
-        font-size: 2.2rem;
-    }
-    nav ul {
-        flex-direction: column;
-        margin-right: 0;
-        gap: 0.7rem;
-    }
+
     main {
         padding: 1rem 0 0 0;
     }
