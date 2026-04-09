@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compétences - Portfolio Enzo</title>
-    
+    <meta name="description"
+        content="Compétences BTS SIO option SISR - Administration systèmes, réseaux, sécurité et infrastructure.">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/competences.css">
 </head>
+
 <body>
     <header>
         <div class="logo"><a href="index.html" style="color: inherit; text-decoration: none;">Portfolio</a></div>
@@ -23,87 +27,393 @@
                 <li><a href="competences.html" class="active">Compétences</a></li>
                 <li><a href="certifications.html">Certifications</a></li>
                 <li><a href="projets.html">Projets</a></li>
+                <li><a href="veille.html">Veille</a></li>
                 <li><a href="documentation.html">Documentation</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="competences-section">
-            <h1>Compétences</h1>
-            <div class="competences-grid">
-
-                <div class="competence-card">
-                    <h2>Exploitation et administration de services et systèmes</h2>
-                    <ul>
-                        <li>Exploiter des services : Apache, MySQL, DHCP, DNS, Pfsense, Wiki</li>
-                        <li>Administrer des systèmes (serveurs et postes de travail) : Windows, Linux, Windows AD</li>
-                        <li>Administrer des réseaux : commutateurs (VLAN, port monitoring, STP), concentrateurs WiFi (VLAN, pont WiFi), routeurs (statique, RIP, dynamique, inter-VLAN)</li>
-                        <li>Analyser des trames réseau (Wireshark)</li>
-                        <li>Gérer la virtualisation : Proxmox, VirtualBox, conteneurs, VM</li>
-                        <li>Mettre en place la haute disponibilité : RAID, sauvegarde, déploiement d'images</li>
-                        <li>Utiliser les langages de commandes et scripting : Windows batch, Unix Shell, matériels d'interconnexion</li>
-                    </ul>
-                </div>
-
-                <div class="competence-card">
-                    <h2>Sécurité des systèmes et réseaux</h2>
-                    <ul>
-                        <li>Mettre en œuvre l’authentification (AD), VLAN, ACL, DMZ</li>
-                        <li>Configurer et utiliser des pare-feu, VPN, certificats, HTTPS, SSH</li>
-                        <li>Protéger les données personnelles et la sécurité des accès</li>
-                    </ul>
-                </div>
-
-                <div class="competence-card">
-                    <h2>Gestion d’infrastructures et de parcs informatiques</h2>
-                    <ul>
-                        <li>Câblage et éléments d’interconnexion : besoins, caractéristiques, installation</li>
-                        <li>Gestion de parc : mises à jour (WSUS), protection du poste de travail, clonage (FOG), sauvegarde et restauration</li>
-                        <li>Gestion et résolution d’incidents : gestion de tickets (GLPI), prise en main à distance, rédaction de procédures</li>
-                    </ul>
-                </div>
-
-                <div class="competence-card">
-                    <h2>Conception et gestion de projets d’infrastructure</h2>
-                    <ul>
-                        <li>Analyser un cahier des charges</li>
-                        <li>Planifier un projet</li>
-                        <li>Réaliser des schémas réseau</li>
-                        <li>Utiliser des méthodes et outils : Trello</li>
-                    </ul>
-                </div>
-
-                <div class="competence-card">
-                    <h2>Développement et applications web</h2>
-                    <ul>
-                        <li>Développer des bases web : HTML, CSS, PHP/MySQL</li>
-                        <li>Manipuler les données et gérer les droits d'accès (SQL)</li>
-                    </ul>
-                </div>
-
-                <div class="competence-card">
-                    <h2>Savoir-faire professionnels</h2>
-                    <ul>
-                        <li>Caractériser, justifier, maquetter, installer, configurer, tester, valider et documenter</li>
-                        <li>Paramétrer, exploiter, interconnecter, administrer, sécuriser, sauvegarder et restaurer</li>
-                        <li>Analyser, contrôler, améliorer, mettre à jour, remplacer, migrer, automatiser, optimiser</li>
-                        <li>Maintenir la disponibilité, la performance et la sécurité</li>
-                        <li>Diagnostiquer et résoudre les incidents</li>
-                    </ul>
-                </div>
-
-                <div class="competence-card">
-                    <h2>Environnements et outils maîtrisés</h2>
-                    <ul>
-                        <li>OS : Windows Server 2016/2022, Windows 10, Windows 11, Linux Debian (console et XFCE), Kali Linux, Ubuntu, Samba</li>
-                        <li>Logiciels : Apache, MySQL, SSH, Wireshark, Proxmox, VirtualBox, PacketTracer</li>
-                        <li>Matériels : commutateurs (CISCO, DLINK), points d'accès WiFi (DLINK), routeurs (CISCO), PC, serveurs de virtualisation (Fujitsu)</li>
-                        <li>Langages : Shell Unix, PowerShell, PHP, HTML, CSS</li>
-                    </ul>
-                </div>
-
+        <!-- Hero Section -->
+        <section class="comp-hero" id="comp-hero">
+            <div class="comp-hero-content">
+                <span class="comp-badge">BTS SIO — Option SISR</span>
+                <h1>Mes Compétences</h1>
+                <p class="comp-hero-subtitle">Solutions d'Infrastructure, Systèmes et Réseaux</p>
             </div>
+            <div class="comp-hero-decoration">
+                <div class="hero-orb hero-orb-1"></div>
+                <div class="hero-orb hero-orb-2"></div>
+                <div class="hero-orb hero-orb-3"></div>
+            </div>
+        </section>
+
+        <!-- Stats bar -->
+        <section class="comp-stats" id="comp-stats">
+            <div class="stat-item">
+                <span class="stat-number" data-target="7">0</span>
+                <span class="stat-label">Domaines de compétence</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="25">0</span>
+                <span class="stat-label">Technologies maîtrisées</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="6">0</span>
+                <span class="stat-label">Blocs de compétences BTS</span>
+            </div>
+        </section>
+
+        <!-- Competences Grid -->
+        <section class="comp-section" id="comp-section">
+
+            <!-- Card 1 - Systèmes & Administration -->
+            <div class="comp-card comp-card--infra" data-aos="fade-up">
+                <div class="comp-card-header">
+                    <div class="comp-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2>Exploitation & Administration</h2>
+                        <span class="comp-card-subtitle">Systèmes et Services</span>
+                    </div>
+                </div>
+                <ul class="comp-list">
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span>Exploiter des services : <strong>Apache, MySQL, DHCP, DNS, iRedMail</strong></span>
+                    </li>
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span>Administrer serveurs et postes : <strong>Windows Server, Linux, Active Directory, Samba
+                                AD</strong></span>
+                    </li>
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span>Administrer des réseaux : <strong>VLAN, STP, RIP, routage inter-VLAN</strong></span>
+                    </li>
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span>Analyser des trames réseau avec <strong>Wireshark</strong></span>
+                    </li>
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span>Virtualisation : <strong>Proxmox, ESXi, VirtualBox, VMware, Docker, VM</strong></span>
+                    </li>
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span>Haute disponibilité : <strong>RAID, HAProxy, sauvegarde, déploiement
+                                d'images</strong></span>
+                    </li>
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span>Accès distant et téléphonie : <strong>Guacamole, Téléphonie IP</strong></span>
+                    </li>
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span>Scripting : <strong>Batch Windows, Shell Unix, PowerShell</strong></span>
+                    </li>
+                </ul>
+                <div class="comp-tags">
+                    <span class="comp-tag">Windows Server</span>
+                    <span class="comp-tag">Linux</span>
+                    <span class="comp-tag">Proxmox</span>
+                    <span class="comp-tag">Active Directory</span>
+                    <span class="comp-tag">DNS</span>
+                    <span class="comp-tag">DHCP</span>
+                </div>
+            </div>
+
+            <!-- Card 2 - Sécurité -->
+            <div class="comp-card comp-card--security" data-aos="fade-up">
+                <div class="comp-card-header">
+                    <div class="comp-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2>Sécurité</h2>
+                        <span class="comp-card-subtitle">Systèmes et Réseaux</span>
+                    </div>
+                </div>
+                <ul class="comp-list">
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span>Pare-feu : <strong>Stormshield , OPNsense</strong></span>
+                    </li>
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span>Authentification : <strong>Active Directory, SAMBA, RADIUS, VLAN, ACL, DMZ</strong></span>
+                    </li>
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span>Configurer <strong>VPN, certificats, HTTPS, SSH</strong></span>
+                    </li>
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span>SIEM & supervision sécurité : <strong>Wazuh</strong></span>
+                    </li>
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span>Protection des <strong>données personnelles</strong> et sécurité des accès</span>
+                    </li>
+                </ul>
+                <div class="comp-tags">
+                    <span class="comp-tag">Stormshield</span>
+                    <span class="comp-tag">OPNsense</span>
+                    <span class="comp-tag">RADIUS</span>
+                    <span class="comp-tag">Wazuh</span>
+                    <span class="comp-tag">VPN</span>
+                    <span class="comp-tag">SSH</span>
+                    <span class="comp-tag">HTTPS</span>
+                </div>
+            </div>
+
+            <!-- Card 3 - Infrastructure & Parc -->
+            <div class="comp-card comp-card--infra" data-aos="fade-up">
+                <div class="comp-card-header">
+                    <div class="comp-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                            <rect x="9" y="9" width="6" height="6"></rect>
+                            <line x1="9" y1="1" x2="9" y2="4"></line>
+                            <line x1="15" y1="1" x2="15" y2="4"></line>
+                            <line x1="9" y1="20" x2="9" y2="23"></line>
+                            <line x1="15" y1="20" x2="15" y2="23"></line>
+                            <line x1="20" y1="9" x2="23" y2="9"></line>
+                            <line x1="20" y1="14" x2="23" y2="14"></line>
+                            <line x1="1" y1="9" x2="4" y2="9"></line>
+                            <line x1="1" y1="14" x2="4" y2="14"></line>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2>Gestion d'Infrastructures</h2>
+                        <span class="comp-card-subtitle">Parc Informatique</span>
+                    </div>
+                </div>
+                <ul class="comp-list">
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span>Câblage et interconnexion : <strong>besoins, caractéristiques,
+                                installation</strong></span>
+                    </li>
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span>Gestion de parc : <strong>WSUS, protection postes, clonage FOG</strong></span>
+                    </li>
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span>Supervision & monitoring : <strong>Zabbix, Graylog</strong></span>
+                    </li>
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span>Incidents : <strong>GLPI, prise en main à distance, procédures</strong></span>
+                    </li>
+                </ul>
+                <div class="comp-tags">
+                    <span class="comp-tag">GLPI</span>
+                    <span class="comp-tag">WSUS</span>
+                    <span class="comp-tag">FOG</span>
+                    <span class="comp-tag">Zabbix</span>
+                    <span class="comp-tag">Graylog</span>
+                </div>
+            </div>
+
+            <!-- Card 4 - Projets -->
+            <div class="comp-card comp-card--project" data-aos="fade-up">
+                <div class="comp-card-header">
+                    <div class="comp-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2>Conception & Gestion de Projets</h2>
+                        <span class="comp-card-subtitle">Infrastructure</span>
+                    </div>
+                </div>
+                <ul class="comp-list">
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span>Analyser un <strong>cahier des charges</strong></span>
+                    </li>
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span><strong>Planifier</strong> et <strong>organiser</strong> un projet</span>
+                    </li>
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span>Réaliser des <strong>schémas réseau</strong></span>
+                    </li>
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span>Outils de gestion : <strong>Trello</strong></span>
+                    </li>
+                </ul>
+                <div class="comp-tags">
+                    <span class="comp-tag">Trello</span>
+                    <span class="comp-tag">PacketTracer</span>
+                    <span class="comp-tag">Schémas</span>
+                </div>
+            </div>
+
+            <!-- Card 5 - Développement -->
+            <div class="comp-card comp-card--dev" data-aos="fade-up">
+                <div class="comp-card-header">
+                    <div class="comp-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2>Développement Web</h2>
+                        <span class="comp-card-subtitle">Applications & Bases de données</span>
+                    </div>
+                </div>
+                <ul class="comp-list">
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span>Développement : <strong>HTML, CSS, PHP/MySQL</strong></span>
+                    </li>
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span>Gestion de données et <strong>droits d'accès SQL</strong></span>
+                    </li>
+                </ul>
+                <div class="comp-tags">
+                    <span class="comp-tag">HTML</span>
+                    <span class="comp-tag">CSS</span>
+                    <span class="comp-tag">PHP</span>
+                    <span class="comp-tag">MySQL</span>
+                    <span class="comp-tag">SQL</span>
+                </div>
+            </div>
+
+            <!-- Card 6 - Savoir-faire -->
+            <div class="comp-card comp-card--pro" data-aos="fade-up">
+                <div class="comp-card-header">
+                    <div class="comp-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2>Savoir-faire Professionnels</h2>
+                        <span class="comp-card-subtitle">Méthodologie & Expertise</span>
+                    </div>
+                </div>
+                <ul class="comp-list">
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <strong>Caractériser, justifier, maquetter, installer, configurer, tester</strong>
+                    </li>
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <strong>Paramétrer, exploiter, interconnecter, administrer, sécuriser</strong>
+                    </li>
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <strong>Analyser, contrôler, améliorer, automatiser, optimiser</strong>
+                    </li>
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span>Maintenir la <strong>disponibilité, performance et sécurité</strong></span>
+                    </li>
+                    <li>
+                        <span class="comp-list-marker"></span>
+                        <span><strong>Diagnostiquer</strong> et <strong>résoudre</strong> les incidents</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Card 7 - Environnements & Outils -->
+            <div class="comp-card comp-card--tools" data-aos="fade-up">
+                <div class="comp-card-header">
+                    <div class="comp-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2>Environnements & Outils</h2>
+                        <span class="comp-card-subtitle">Stack Technique</span>
+                    </div>
+                </div>
+                <div class="comp-env-grid">
+                    <div class="comp-env-group">
+                        <h3>Systèmes d'exploitation</h3>
+                        <div class="comp-tags comp-tags--inline">
+                            <span class="comp-tag comp-tag--os">Windows Server 2016/2022/2025</span>
+                            <span class="comp-tag comp-tag--os">Windows 10/11</span>
+                            <span class="comp-tag comp-tag--os">Linux Debian</span>
+                            <span class="comp-tag comp-tag--os">Kali Linux</span>
+                            <span class="comp-tag comp-tag--os">Ubuntu</span>
+                            <span class="comp-tag comp-tag--os">Arch Linux</span>
+                        </div>
+                    </div>
+                    <div class="comp-env-group">
+                        <h3>Logiciels & Services</h3>
+                        <div class="comp-tags comp-tags--inline">
+                            <span class="comp-tag comp-tag--soft">Apache</span>
+                            <span class="comp-tag comp-tag--soft">MySQL</span>
+                            <span class="comp-tag comp-tag--soft">SSH</span>
+                            <span class="comp-tag comp-tag--soft">Wireshark</span>
+                            <span class="comp-tag comp-tag--soft">Proxmox</span>
+                            <span class="comp-tag comp-tag--soft">VirtualBox</span>
+                            <span class="comp-tag comp-tag--soft">VMware</span>
+                            <span class="comp-tag comp-tag--soft">PacketTracer</span>
+                            <span class="comp-tag comp-tag--soft">Stormshield</span>
+                            <span class="comp-tag comp-tag--soft">Guacamole</span>
+                            <span class="comp-tag comp-tag--soft">HAProxy</span>
+                            <span class="comp-tag comp-tag--soft">Wazuh</span>
+                            <span class="comp-tag comp-tag--soft">Graylog</span>
+                            <span class="comp-tag comp-tag--soft">Zabbix</span>
+                            <span class="comp-tag comp-tag--soft">RADIUS</span>
+                            <span class="comp-tag comp-tag--soft">iRedMail</span>
+                            <span class="comp-tag comp-tag--soft">Samba AD</span>
+                        </div>
+                    </div>
+                    <div class="comp-env-group">
+                        <h3>Matériels</h3>
+                        <div class="comp-tags comp-tags--inline">
+                            <span class="comp-tag comp-tag--hw">Switches CISCO/DLINK</span>
+                            <span class="comp-tag comp-tag--hw">Routeurs CISCO</span>
+                            <span class="comp-tag comp-tag--hw">AP WiFi DLINK</span>
+                            <span class="comp-tag comp-tag--hw">Serveurs Fujitsu</span>
+                            <span class="comp-tag comp-tag--hw">Téléphonie IP</span>
+                        </div>
+                    </div>
+                    <div class="comp-env-group">
+                        <h3>Langages</h3>
+                        <div class="comp-tags comp-tags--inline">
+                            <span class="comp-tag comp-tag--lang">Shell Unix</span>
+                            <span class="comp-tag comp-tag--lang">PowerShell</span>
+                            <span class="comp-tag comp-tag--lang">PHP</span>
+                            <span class="comp-tag comp-tag--lang">HTML</span>
+                            <span class="comp-tag comp-tag--lang">CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </section>
     </main>
 
@@ -112,6 +422,7 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/competences.js"></script>
 </body>
-</html>
 
+</html>
