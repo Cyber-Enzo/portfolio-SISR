@@ -238,42 +238,42 @@ main {
 
 /* Card theme colors - 6 blocs */
 .comp-card--patrimoine::before {
-    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    background: linear-gradient(90deg, #2563eb, #3b82f6) !important;
 }
 .comp-card--patrimoine:hover {
     border-color: #93c5fd;
 }
 
 .comp-card--incidents::before {
-    background: linear-gradient(90deg, #dc2626, #ef4444);
+    background: linear-gradient(90deg, #dc2626, #ef4444) !important;
 }
 .comp-card--incidents:hover {
     border-color: #fca5a5;
 }
 
 .comp-card--presence::before {
-    background: linear-gradient(90deg, #059669, #10b981);
+    background: linear-gradient(90deg, #059669, #10b981) !important;
 }
 .comp-card--presence:hover {
     border-color: #6ee7b7;
 }
 
 .comp-card--projet::before {
-    background: linear-gradient(90deg, #7c3aed, #8b5cf6);
+    background: linear-gradient(90deg, #7c3aed, #8b5cf6) !important;
 }
 .comp-card--projet:hover {
     border-color: #c4b5fd;
 }
 
 .comp-card--service::before {
-    background: linear-gradient(90deg, #d97706, #f59e0b);
+    background: linear-gradient(90deg, #d97706, #f59e0b) !important;
 }
 .comp-card--service:hover {
     border-color: #fcd34d;
 }
 
 .comp-card--devpro::before {
-    background: linear-gradient(90deg, #0891b2, #06b6d4);
+    background: linear-gradient(90deg, #0891b2, #06b6d4) !important;
 }
 .comp-card--devpro:hover {
     border-color: #67e8f9;
@@ -304,28 +304,46 @@ main {
 
 /* Icon background colors per theme */
 .comp-card--patrimoine .comp-card-icon {
-    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
-    color: #2563eb;
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe) !important;
+    color: #2563eb !important;
+}
+.comp-card--patrimoine .comp-card-icon svg {
+    stroke: #2563eb;
 }
 .comp-card--incidents .comp-card-icon {
-    background: linear-gradient(135deg, #fee2e2, #fecaca);
-    color: #dc2626;
+    background: linear-gradient(135deg, #fee2e2, #fecaca) !important;
+    color: #dc2626 !important;
+}
+.comp-card--incidents .comp-card-icon svg {
+    stroke: #dc2626;
 }
 .comp-card--presence .comp-card-icon {
-    background: linear-gradient(135deg, #d1fae5, #a7f3d0);
-    color: #059669;
+    background: linear-gradient(135deg, #d1fae5, #a7f3d0) !important;
+    color: #059669 !important;
+}
+.comp-card--presence .comp-card-icon svg {
+    stroke: #059669;
 }
 .comp-card--projet .comp-card-icon {
-    background: linear-gradient(135deg, #ede9fe, #ddd6fe);
-    color: #7c3aed;
+    background: linear-gradient(135deg, #ede9fe, #ddd6fe) !important;
+    color: #7c3aed !important;
+}
+.comp-card--projet .comp-card-icon svg {
+    stroke: #7c3aed;
 }
 .comp-card--service .comp-card-icon {
-    background: linear-gradient(135deg, #fef3c7, #fde68a);
-    color: #d97706;
+    background: linear-gradient(135deg, #fef3c7, #fde68a) !important;
+    color: #d97706 !important;
+}
+.comp-card--service .comp-card-icon svg {
+    stroke: #d97706;
 }
 .comp-card--devpro .comp-card-icon {
-    background: linear-gradient(135deg, #cffafe, #a5f3fc);
-    color: #0891b2;
+    background: linear-gradient(135deg, #cffafe, #a5f3fc) !important;
+    color: #0891b2 !important;
+}
+.comp-card--devpro .comp-card-icon svg {
+    stroke: #0891b2;
 }
 
 .comp-card-header h2 {
@@ -391,22 +409,22 @@ main {
 
 /* Marker colors per card theme */
 .comp-card--patrimoine .comp-list-marker {
-    background: #2563eb;
+    background: #2563eb !important;
 }
 .comp-card--incidents .comp-list-marker {
-    background: #dc2626;
+    background: #dc2626 !important;
 }
 .comp-card--presence .comp-list-marker {
-    background: #059669;
+    background: #059669 !important;
 }
 .comp-card--projet .comp-list-marker {
-    background: #7c3aed;
+    background: #7c3aed !important;
 }
 .comp-card--service .comp-list-marker {
-    background: #d97706;
+    background: #d97706 !important;
 }
 .comp-card--devpro .comp-list-marker {
-    background: #0891b2;
+    background: #0891b2 !important;
 }
 
 /* ── Staggered animation delays ───────────────── */
@@ -465,171 +483,10 @@ main {
     margin-bottom: 2rem;
 }
 
-/* Excel Embed via SheetJS */
-.excel-embed-wrapper {
-    border-radius: 16px;
-    overflow-x: auto;
-    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
-    border: 1px solid #e2e8f0;
-    background: #fff;
-    min-height: 200px;
-}
-
-/* Loading state */
-.excel-loading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 4rem 2rem;
-    gap: 1rem;
-    color: #64748b;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-}
-
-.excel-spinner {
-    width: 36px;
-    height: 36px;
-    border: 3px solid #e2e8f0;
-    border-top-color: #2563eb;
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
-/* Error state */
-.excel-error {
-    text-align: center;
-    padding: 3rem 2rem;
-    font-family: 'Inter', sans-serif;
-    color: #64748b;
-}
-
-.excel-error p:first-child {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #0f172a;
-    margin-bottom: 0.5rem;
-}
-
-.excel-error-detail {
-    font-size: 0.85rem;
-}
-
-/* SheetJS rendered table */
-.xlsx-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.82rem;
-}
-
-.xlsx-table th,
-.xlsx-table td {
-    border: 1px solid #e2e8f0;
-    padding: 0.6rem 0.7rem;
-    vertical-align: middle;
-    line-height: 1.4;
-}
-
-/* Header rows (title, subtitle, candidate info) */
-.xlsx-header-row th {
-    background: linear-gradient(135deg, #0f172a, #1e3a8a);
-    color: #fff;
-    font-weight: 700;
-    font-size: 0.85rem;
-    text-align: left;
-    border-color: rgba(255, 255, 255, 0.15);
-}
-
-/* Sub-header row (competency columns) */
-.xlsx-subheader-row th {
-    background: linear-gradient(135deg, #1e3a8a, #2563eb);
-    color: #fff;
-    font-weight: 600;
-    font-size: 0.72rem;
-    text-align: center;
-    border-color: rgba(255, 255, 255, 0.15);
-    line-height: 1.3;
-}
-
-/* Competency detail row */
-.xlsx-compdetail-row th {
-    background: #f1f5f9;
-    color: #475569;
-    font-weight: 500;
-    font-size: 0.68rem;
-    text-align: center;
-    line-height: 1.3;
-    vertical-align: top;
-}
-
-/* Separator rows */
-.xlsx-separator-row td {
-    background: linear-gradient(90deg, #f1f5f9, #e2e8f0);
-    font-weight: 700;
-    color: #1e3a8a;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    font-size: 0.75rem;
-    padding: 0.5rem 0.8rem;
-}
-
-/* Data rows */
-.xlsx-data-row td {
-    color: #334155;
-    font-size: 0.82rem;
-}
-
-.xlsx-data-row td:first-child {
-    font-weight: 500;
-    color: #0f172a;
-    min-width: 220px;
-}
-
-.xlsx-data-row td:nth-child(2) {
-    text-align: center;
-    white-space: nowrap;
-    color: #64748b;
-    font-size: 0.78rem;
-}
-
-.xlsx-data-row:hover {
-    background: #f8fafc;
-}
-
-/* Styled X checkmarks */
-.xlsx-check {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 26px;
-    height: 26px;
-    border-radius: 7px;
-    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
-    color: #1d4ed8;
-    font-weight: 800;
-    font-size: 0.8rem;
-    transition: transform 0.2s ease;
-}
-
-.xlsx-check:hover {
-    transform: scale(1.15);
-}
-
-/* Center check cells */
-.xlsx-data-row td:nth-child(n+3) {
-    text-align: center;
-}
-
 /* Download button */
 .excel-download {
     text-align: center;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 
 .excel-download-btn {
@@ -695,10 +552,6 @@ main {
     .comp-table-title {
         font-size: 1.4rem;
     }
-
-    .excel-embed {
-        height: 450px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -734,10 +587,6 @@ main {
 
     .comp-table-section {
         padding: 0 0.8rem 3rem 0.8rem;
-    }
-
-    .excel-embed {
-        height: 350px;
     }
 
     .excel-download-btn {

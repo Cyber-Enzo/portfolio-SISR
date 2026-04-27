@@ -277,21 +277,14 @@
 
         </section>
 
-        <!-- Tableau de synthèse E5 - Fichier Excel intégré via SheetJS -->
+        <!-- Tableau de synthèse E5 - Bouton de téléchargement -->
         <section class="comp-table-section" id="comp-table">
             <h2 class="comp-table-title">Tableau de synthèse des réalisations professionnelles</h2>
             <p class="comp-table-subtitle">Épreuve E5 — BTS SIO — Session 2026</p>
 
-            <div class="excel-embed-wrapper" id="excel-render">
-                <div class="excel-loading">
-                    <div class="excel-spinner"></div>
-                    <p>Chargement du tableau Excel…</p>
-                </div>
-            </div>
-
             <div class="excel-download">
                 <a href="Tableau de synthese - Epreuve E5 - BTS SIO 2026.xlsx" download class="excel-download-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                         <polyline points="7 10 12 15 17 10"></polyline>
@@ -307,119 +300,9 @@
         <p class="copyright">© 2026 - Enzo - Tous droits réservés</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/competences.js"></script>
-    <script>
-        (function () {
-            const container = document.getElementById('excel-render');
-            const xlsxUrl = 'Tableau de synthese - Epreuve E5 - BTS SIO 2026.xlsx';
-
-            fetch(xlsxUrl)
-                .then(res => {
-                    if (!res.ok) throw new Error('Fichier non trouvé');
-                    return res.arrayBuffer();
-                })
-                .then(data => {
-                    const workbook = XLSX.read(data, { type: 'array' });
-                    const sheet = workbook.Sheets[workbook.SheetNames[0]];
-
-                    // Detect used range (skip empty trailing rows/cols)
-                    const range = XLSX.utils.decode_range(sheet['!ref']);
-                    // Limit to meaningful rows (up to row 15 based on the data)
-                    const maxRow = Math.min(range.e.r, 20);
-                    const maxCol = Math.min(range.e.c, 7); // columns A-H
-
-                    let html = '<table class="xlsx-table">';
-
-                    for (let r = range.s.r; r <= maxRow; r++) {
-                        // Skip completely empty rows
-                        let hasContent = false;
-                        for (let c = range.s.c; c <= maxCol; c++) {
-                            const addr = XLSX.utils.encode_cell({ r: r, c: c });
-                            if (sheet[addr] && sheet[addr].v !== undefined && sheet[addr].v !== '') {
-                                hasContent = true;
-                                break;
-                            }
-                        }
-                        if (!hasContent) continue;
-
-                        // Determine row type for styling
-                        const firstCellAddr = XLSX.utils.encode_cell({ r: r, c: 0 });
-                        const firstVal = sheet[firstCellAddr] ? String(sheet[firstCellAddr].v || '') : '';
-                        let rowClass = '';
-
-                        if (r <= 3) rowClass = 'xlsx-header-row';
-                        else if (r === 4) rowClass = 'xlsx-subheader-row';
-                        else if (r === 5) rowClass = 'xlsx-compdetail-row';
-                        else if (firstVal.toLowerCase().includes('réalisation') || firstVal.toLowerCase().includes('realisation')) rowClass = 'xlsx-separator-row';
-                        else rowClass = 'xlsx-data-row';
-
-                        html += `<tr class="${rowClass}">`;
-
-                        // Handle merged cells
-                        const merges = sheet['!merges'] || [];
-
-                        for (let c = range.s.c; c <= maxCol; c++) {
-                            // Check if cell is part of a merge (not the origin)
-                            let isMerged = false;
-                            let isOrigin = false;
-                            let colspan = 1;
-                            let rowspan = 1;
-
-                            for (const merge of merges) {
-                                if (r >= merge.s.r && r <= merge.e.r && c >= merge.s.c && c <= merge.e.c) {
-                                    if (r === merge.s.r && c === merge.s.c) {
-                                        isOrigin = true;
-                                        colspan = Math.min(merge.e.c, maxCol) - merge.s.c + 1;
-                                        rowspan = merge.e.r - merge.s.r + 1;
-                                    } else {
-                                        isMerged = true;
-                                    }
-                                    break;
-                                }
-                            }
-
-                            if (isMerged) continue;
-
-                            const addr = XLSX.utils.encode_cell({ r: r, c: c });
-                            let val = sheet[addr] ? String(sheet[addr].v || '') : '';
-
-                            // Clean up checkboxes
-                            val = val.replace(/☑/g, '☑').replace(/☐/g, '☐');
-
-                            // Style X marks
-                            if (val.trim() === 'X' || val.trim() === 'x') {
-                                val = '<span class="xlsx-check">✕</span>';
-                            }
-
-                            // Replace newlines
-                            val = val.replace(/\n/g, '<br>');
-
-                            const tag = (r <= 5) ? 'th' : 'td';
-                            let attrs = '';
-                            if (colspan > 1) attrs += ` colspan="${colspan}"`;
-                            if (rowspan > 1) attrs += ` rowspan="${rowspan}"`;
-
-                            html += `<${tag}${attrs}>${val}</${tag}>`;
-                        }
-
-                        html += '</tr>';
-                    }
-
-                    html += '</table>';
-                    container.innerHTML = html;
-                })
-                .catch(err => {
-                    container.innerHTML = `
-                        <div class="excel-error">
-                            <p>⚠️ Impossible de charger le tableau Excel.</p>
-                            <p class="excel-error-detail">Utilisez le bouton ci-dessous pour télécharger le fichier.</p>
-                        </div>`;
-                    console.error('Excel load error:', err);
-                });
-        })();
-    </script>
 </body>
+
 
 </html>

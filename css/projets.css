@@ -187,57 +187,57 @@ main {
 
 /* Couleurs par bloc de compétence */
 .pastille--patrimoine {
-    background: #dbeafe;
-    color: #1d4ed8;
-    border: 1px solid #93c5fd;
+    background: #dbeafe !important;
+    color: #1d4ed8 !important;
+    border: 1px solid #93c5fd !important;
 }
 .pastille--patrimoine::before {
-    background: #2563eb;
+    background: #2563eb !important;
 }
 
 .pastille--incidents {
-    background: #fee2e2;
-    color: #b91c1c;
-    border: 1px solid #fca5a5;
+    background: #fee2e2 !important;
+    color: #b91c1c !important;
+    border: 1px solid #fca5a5 !important;
 }
 .pastille--incidents::before {
-    background: #dc2626;
+    background: #dc2626 !important;
 }
 
 .pastille--presence {
-    background: #d1fae5;
-    color: #047857;
-    border: 1px solid #6ee7b7;
+    background: #d1fae5 !important;
+    color: #047857 !important;
+    border: 1px solid #6ee7b7 !important;
 }
 .pastille--presence::before {
-    background: #059669;
+    background: #059669 !important;
 }
 
 .pastille--projet {
-    background: #ede9fe;
-    color: #6d28d9;
-    border: 1px solid #c4b5fd;
+    background: #ede9fe !important;
+    color: #6d28d9 !important;
+    border: 1px solid #c4b5fd !important;
 }
 .pastille--projet::before {
-    background: #7c3aed;
+    background: #7c3aed !important;
 }
 
 .pastille--service {
-    background: #fef3c7;
-    color: #92400e;
-    border: 1px solid #fcd34d;
+    background: #fef3c7 !important;
+    color: #92400e !important;
+    border: 1px solid #fcd34d !important;
 }
 .pastille--service::before {
-    background: #d97706;
+    background: #d97706 !important;
 }
 
 .pastille--devpro {
-    background: #cffafe;
-    color: #0e7490;
-    border: 1px solid #67e8f9;
+    background: #cffafe !important;
+    color: #0e7490 !important;
+    border: 1px solid #67e8f9 !important;
 }
 .pastille--devpro::before {
-    background: #0891b2;
+    background: #0891b2 !important;
 }
 
 /* Lightbox (image en grand) */
