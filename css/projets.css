@@ -142,6 +142,104 @@ main {
     box-shadow: 0 0 0 4px var(--primary-color), 0 8px 40px rgba(37, 99, 235, 0.12);
 }
 
+/* ══════════════════════════════════════════════════
+   PASTILLES DE COMPÉTENCES - sous chaque projet
+   ══════════════════════════════════════════════════ */
+
+.projet-competences {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f1f5f9;
+    width: 100%;
+}
+
+.comp-pastille {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.4rem 0.85rem;
+    border-radius: 50px;
+    letter-spacing: 0.2px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: default;
+    white-space: nowrap;
+}
+
+.comp-pastille::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.comp-pastille:hover {
+    transform: scale(1.06);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Couleurs par bloc de compétence */
+.pastille--patrimoine {
+    background: #dbeafe;
+    color: #1d4ed8;
+    border: 1px solid #93c5fd;
+}
+.pastille--patrimoine::before {
+    background: #2563eb;
+}
+
+.pastille--incidents {
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fca5a5;
+}
+.pastille--incidents::before {
+    background: #dc2626;
+}
+
+.pastille--presence {
+    background: #d1fae5;
+    color: #047857;
+    border: 1px solid #6ee7b7;
+}
+.pastille--presence::before {
+    background: #059669;
+}
+
+.pastille--projet {
+    background: #ede9fe;
+    color: #6d28d9;
+    border: 1px solid #c4b5fd;
+}
+.pastille--projet::before {
+    background: #7c3aed;
+}
+
+.pastille--service {
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fcd34d;
+}
+.pastille--service::before {
+    background: #d97706;
+}
+
+.pastille--devpro {
+    background: #cffafe;
+    color: #0e7490;
+    border: 1px solid #67e8f9;
+}
+.pastille--devpro::before {
+    background: #0891b2;
+}
+
 /* Lightbox (image en grand) */
 .lightbox {
     display: none;
@@ -221,5 +319,15 @@ main {
     .lightbox img {
         max-width: 99vw;
         max-height: 80vh;
+    }
+
+    .comp-pastille {
+        font-size: 0.65rem;
+        padding: 0.3rem 0.65rem;
+    }
+
+    .comp-pastille::before {
+        width: 6px;
+        height: 6px;
     }
 }
